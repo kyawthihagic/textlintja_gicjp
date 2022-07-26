@@ -21,6 +21,7 @@ const App = {
         const enabledRules = context.rules.filter(rule => rule.enable);
         const disabledRules = context.rules.filter(rule => !rule.enable);
         const { text, ruleErrors, mode } = context;
+
         if (mode.embed) {
             return (
                 <div class="App">
@@ -43,6 +44,7 @@ const App = {
                     text={text}
                 />
                 <Footer />
+                <TextLintTest />
             </div>
         );
     }
