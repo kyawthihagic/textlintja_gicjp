@@ -44,7 +44,6 @@ const App = {
                     text={text}
                 />
                 <Footer />
-                <TextLintTest />
             </div>
         );
     }
