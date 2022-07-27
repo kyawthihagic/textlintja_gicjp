@@ -44,7 +44,6 @@ const createValidator = ({ rules, rulesOption }) => {
         }
     );
     return (text, callback) => {
-        console.log(text);
         if (!text) {
             callback([]);
             return;
