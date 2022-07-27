@@ -17,7 +17,7 @@ export function rule(context, options = defaultOptions) {
             const text = getSource(node);
             matchCaptureGroupAll(text, HiraganaRegExp).forEach(({ text, index }) => {
                 // maxより長い場合はエラーとなる
-                const ruleError = new RuleError(`「平仮名が連続して10文字以上使われていないか」をチェック`, {
+                const ruleError = new RuleError(`平仮名が連続して10文字以上使われていないか`, {
                     index
                 });
                 report(node, ruleError);
