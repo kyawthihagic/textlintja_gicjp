@@ -27,7 +27,7 @@
     "watch:css": "suitcss --no-lint --watch --import-root css/ css/index.css public/build/build.css",
     "watch:js": "webpack -d --watch",
     "watch": "npm-run-all --parallel watch:*",
-    "deploy": "gh-pages -b master -d ./public --repo git@github.com:kyawthihagic/TextlintDemo.git",
+    "deploy": "gh-pages -b master -d ./public --repo git@github.com:kyawthihagic/Demo.git",
     "server": "cross-env NODE_ENV=development webpack-dev-server --hot --content-base ./public",
     "prettier": "prettier --write \"**/*.{js,jsx,ts,tsx,css}\"",
     "clean": "rimraf public/build/",

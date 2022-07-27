@@ -21,25 +21,25 @@ module.exports = {
         chunkFilename: "[name].bundle.js",
         filename: "[name].bundle.js"
     },
-    optimization: {
-        minimizer: [
-            // we specify a custom UglifyJsPlugin here to get source maps in production
-            new UglifyJsPlugin({
-                cache: true,
-                parallel: true,
-                uglifyOptions: {
-                    // FIXME: https://github.com/webpack/webpack/issues/6760
-                    compress: {
-                        inline: 1
-                    },
-                    ecma: 5,
-                    mangle: true
-                },
-                sourceMap: true,
-                exclude: [/node_modules/]
-            })
-        ]
-    },
+    // optimization: {
+    //     minimizer: [
+    //         // we specify a custom UglifyJsPlugin here to get source maps in production
+    //         new UglifyJsPlugin({
+    //             cache: true,
+    //             parallel: true,
+    //             uglifyOptions: {
+    //                 // FIXME: https://github.com/webpack/webpack/issues/6760
+    //                 compress: {
+    //                     inline: 1
+    //                 },
+    //                 ecma: 5,
+    //                 mangle: true
+    //             },
+    //             sourceMap: true,
+    //             exclude: [/node_modules/]
+    //         })
+    //     ]
+    // },
     module: {
         rules: [
             { test: /\.css$/, loader: "style-loader!css-loader" },
@@ -54,6 +54,6 @@ module.exports = {
         new webpack.DefinePlugin({
             "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV)
         })
-        // new BundleAnalyzerPlugin(),
+        // new BundleAnalyzerPlugin()
     ]
 };
