@@ -42,5 +42,23 @@ export const defaultRuleList = [
         name: "textlint-rule-preset-jtf-style-2.2.1.ひらがなと漢字の使い分け",
         rule: require("textlint-rule-preset-jtf-style").rules["2.2.1.ひらがなと漢字の使い分け"],
         enable: true
+    },
+    {
+        id: 8,
+        name: "textlint-rule-max-hiragana-continuous-len",
+        rule: require("./rules/textlint-rule-max-hiragana-continuous-len").rule,
+        enable: true
+    },
+    {
+        id: 9,
+        name: "textlint-rule-max-digits-chinese-combination-len",
+        rule: require("./rules/textlint-rule-max-digits-chinese-combination-len").rule,
+        enable: true
+    },
+    {
+        id: 10,
+        name: "textlint-rule-max-digits-four",
+        rule: require("./rules/textlint-rule-max-digits-four").rule,
+        enable: true
     }
 ];
