@@ -3,11 +3,12 @@
 import { RuleHelper } from "textlint-rule-helper";
 import { matchCaptureGroupAll } from "match-index";
 
-const RegExp = /((?:[,|\d]{6,})+)/g;
+const RegExp = /([0-9][1-9][0-9]|[0-9][0-9][1-9])/g;
 
 export function rule(context, options = defaultOptions) {
     const { Syntax, RuleError, report, fixer, getSource } = context;
     const helper = new RuleHelper(context);
+
     return {
         [Syntax.Str](node) {
             if (helper.isChildNode(node, [Syntax.Link, Syntax.Image, Syntax.BlockQuote, Syntax.Emphasis])) {
@@ -15,7 +16,7 @@ export function rule(context, options = defaultOptions) {
             }
             const text = getSource(node);
             matchCaptureGroupAll(text, RegExp).forEach(({ text, index }) => {
-                const ruleError = new RuleError(`6桁以上の数値の表記は、漢字表記を併用しているか`, {
+                const ruleError = new RuleError(`正確性が求められない場合は区切りのいい数値で紹介しているか`, {
                     index
                 });
                 report(node, ruleError);

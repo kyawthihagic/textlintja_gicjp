@@ -60,5 +60,11 @@ export const defaultRuleList = [
         name: "textlint-rule-max-digits-four",
         rule: require("./rules/textlint-rule-max-digits-four").rule,
         enable: true
+    },
+    {
+        id: 11,
+        name: "textlint-rule-last-two-digit-zero",
+        rule: require("./rules/textlint-rule-last-two-digit-zero").rule,
+        enable: true
     }
 ];
